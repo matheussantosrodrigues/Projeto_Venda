@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- LINKANDO O CSS -->
+       <link rel="stylesheet" href="style.css" />
+      <style> 
+        .fundo {
+  background-image: url(img/fundo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  .nos {
+  	display: flex;
+  	justify-content: space-between;
+  	margin-left: 10%;
+  	margin-right: 10%;
+
+  }
+  .card{
+  	background-color: black;
+  	color: white;
+  	border-color: white;
+  }
+</style>
+
+	<title>Quem Somos</title>
+</head>
+<body class="fundo">
+
+     <!-- MENU EM SI -->
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="#">Star Modas</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="quemsomos.html">Quem somos?</a></li>
+          <li>
+            <a href="#" class="desktop-item">Cadastros</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Cadastro</label>
+            <ul class="drop-menu">
+              <li><a href="cadastroCliente.html">Cliente</a></li>
+              <li><a href="cadastroProduto.html">Produto</a></li>
+              <li><a href="cadastroTamanha.html">Tamanho</a></li>
+              <li><a href="cadastroVendaItem.html">Venda</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="desktop-item">Consultas</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Consultas</label>
+            <ul class="drop-menu">
+              <li><a href="../controller/consultaCliente.php">Clientes</a></li>
+              <li><a href="../controller/consultaProduto.php">Produtos</a></li>
+        </ul>
+          </li>
+        </ul>
+      </div>
+      </nav>
+  <br><br><br><br><br><br>
+<div class="nos">
+  <div class="card" style="width: 18rem;">
+  <img src="img/brenda.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><h3><b>Brenda</b></h3><br>
+    Controller - CadastroCliente, CadastroTamanho;<br>
+    View - Quem Somos?, CadastroTamanho;<br>
+	Página Home
+	</p>
+  </div>
+</div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="img/gi.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><h3><b>Gisele</b></h3><br>Controller - CadastroCliente;<br>
+    View - Quem Somos?;<br>
+	Página Home
+  </div>
+</div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="img/matheus.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><h3><b>Matheus</b></h3><br>Controller - CadastroTamanho, Cadastro Produto;<br>
+    View - CadastroTamanho, CadastroProduto;<br>
+	Logo; <br>
+	CSS</p>
+  </div>
+</div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="img/pedro.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><h3><b>Pedro</b></h3><br>Controller - CadastroTamanho;<br>
+    View - CadastroTamanho;<br>
+	Logo;<br>
+	CSS</p>
+  </div>
+</div>
+</div>
+</body>
+</html>

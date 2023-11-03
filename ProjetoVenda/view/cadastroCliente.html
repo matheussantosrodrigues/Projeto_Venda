@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+   
+    <!-- LINKANDO O CSS -->
+       <link rel="stylesheet" href="style.css" />
+       <link rel="stylesheet" type="text/css" href="button.css">
+      <style> 
+        .fundo {
+  background-image: url(img/fundo2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  .centrar-formulario {
+    width: 80%; /* Defina a largura desejada para o formulário */
+    margin: 0 auto; /* Isso alinhará automaticamente o formulário horizontalmente */
+    padding: auto; /* Adicione algum espaço ao redor do formulário (opcional) */
+  }
+  </style>
+
+	<title>C. Cliente</title>
+</head>
+<body class="fundo">
+
+     <!-- MENU EM SI -->
+    <nav>
+  <div class="wrapper">
+    <div class="logo"><a href="#">Star Modas</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="quemsomos.html">Quem somos?</a></li>
+      <li>
+        <a href="#" class="desktop-item">Cadastros</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Cadastro</label>
+        <ul class="drop-menu">
+          <li><a href="cadastroCliente.html">Cliente</a></li>
+          <li><a href="cadastroProduto.html">Produto</a></li>
+          <li><a href="cadastroTamanha.html">Tamanho</a></li>
+          <li><a href="cadastroVendaItem.html">Venda</a></li>
+        </ul>
+      </li>
+	  <li>
+        <a href="#" class="desktop-item">Consultas</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Consultas</label>
+        <ul class="drop-menu">
+          <li><a href="../controller/consultaCliente.php">Clientes</a></li>
+          <li><a href="../controller/consultaProduto.php">Produtos</a></li>
+		</ul>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <br><br><br><br><br><br>
+		<div class="formCad centrar-formulario">
+			<form method="POST" action="../controller/cadastroCliente.php">
+			<fieldset><section id="endereco">
+				<h2><b>Dados do Cliente:</b></h2>
+				<input type="text" name="txtNome" placeholder="Nome Completo:" minlength="5" maxlength="60" required>
+
+				<input type="text" name="txtCpf" placeholder="CPF:" minlength="11" maxlength="11" required>
+      </section></fieldset><br><br><br>
+
+	  <h2><b>Dados</b></h2>
+
+				 <p for="pet-select">Tipo de Logradouro:</p>
+
+               			 <select name="txtlogradouro" id="logradouro">
+               			 <option value="">--Selecione o tipo de logradouro--</option>
+                		<option value="rua">Rua</option>
+                		<option value="Avenida">Avenida</option>
+                		<option value="Travessa">Travessa</option>
+                		<option value="Alameda">Alameda</option>
+                		<option value="Condominio">Condomínio</option>
+                		</select><br><br>
+
+				<input type="text" name="txtRua" placeholder="Rua:" minlength="3" maxlength="50" required>
+
+				<input type="text" name="txtBairro" placeholder="Bairro:" minlength="3" maxlength="30" required>
+
+				<input type="text" name="txtCidade" placeholder="Cidade:" minlength="5" maxlength="30" required>
+
+				<input type="text" name="txtUf" placeholder="UF" maxlength="2" minlength="2" pattern="[aA-zZ]{2}"><br><br>
+
+				<input type="text" name="txtNum" placeholder="Numero">
+
+				<input type="text" name="txtComp" placeholder="Complemento" maxlength="30" minlength="5">
+
+				<input type="text" name="txtCep" placeholder="Cep" maxlength="8" minlength="8">
+
+				<input type="text" name="txtObs" placeholder="Obs" maxlength="50"><br><br><br><br><br><br>
+			</section>
+				<button class="button-64" role="button"><span class="text">Enviar</span></button>
+			</form>
+		</div>
+
+</body>
+</html>
