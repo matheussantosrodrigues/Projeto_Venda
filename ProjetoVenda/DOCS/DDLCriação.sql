@@ -69,13 +69,10 @@ create table tamanho
 	create table tamanhoProduto (
 	quantidade int not null,
 	codTamPro int auto_increment primary key,
-    codTam int not null,
+    
     constraint fkcodTam foreign key (codTam) references tamanho (codTam),
+    codTam int not null,
 	codProduto int not null,
     constraint fkcodpro foreign key (codProduto) references produto (codProduto)
 	);        
-    select * from cliente;
-    select * from produto;
-	select * from tamanho;
-    select * from tamanhoProduto;
- 
+   

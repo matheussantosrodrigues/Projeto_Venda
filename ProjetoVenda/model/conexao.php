@@ -78,9 +78,35 @@ public function consultar(){
 public function consultarProduto(){
     
     $retornaProduto = array();
-    $lerProduto = $this-> pdo -> query("select valor, categoria, genero, tipo, marca from produto;");
+    $lerProduto = $this-> pdo -> query("select nomeProduto, valor, categoria, genero, tipo, marca from produto;");
     $retornaProduto = $lerProduto -> fetchAll(PDO::FETCH_ASSOC);
     return $retornaProduto;
+}
+
+//consultar codProduto e nomeProduto from produto, para o cadastro quantidade
+public function consultarProdQuant(){
+    
+    $retornaProdQuant = array();
+    $lerProdQuant = $this-> pdo -> query("select codProduto, nomeProduto from produto");
+    $retornaProdQuant = $lerProdQuant -> fetchAll(PDO::FETCH_ASSOC);
+    return $retornaProdQuant;
+}
+
+public function consultarTamanho(){
+    
+    $retornaTamanho= array();
+    $lerTamanho = $this-> pdo -> query("select codTam, sigla from tamanho");
+    $retornaTamanho = $lerTamanho -> fetchAll(PDO::FETCH_ASSOC);
+    return $retornaTamanho;
+}
+public function insereQuantidade( $cadQuantidade,$cadNT,$cadNP){
+    
+    $insereQuantidade = $this->pdo->prepare("INSERT INTO tamanhoproduto(quantidade, codTam, codProduto)
+    VALUES (:quantidade, :codTam, :codProduto)");
+    $insereQuantidade->bindValue(":quantidade",$cadQuantidade);
+    $insereQuantidade->bindValue(":codTam", $cadNT);
+    $insereQuantidade->bindValue(":codProduto", $cadNP);
+    $insereQuantidade->execute();
 }
 
 }

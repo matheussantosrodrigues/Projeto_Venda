@@ -74,6 +74,8 @@ td {
 </center></h2><br>
 	<table border="1" class="tabela">
 		<tr>
+      <td>LANCAR QUANTIDADES</td>
+      <td>NOME PRODUTO</td>
 			<td>VALOR</td>
 			<td>CATEGORIA</td>
 			<td>GENERO</td>
