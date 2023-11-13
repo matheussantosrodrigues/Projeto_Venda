@@ -74,6 +74,8 @@ td {
 </center></h2><br>
 	<table border="1" class="tabela">
 		<tr>
+      <td>C. QUANT.</td>
+      <td>N. PROD.</td>
       <td>QUANTIDADES</td>
 			<td>VALOR</td>
 			<td>CATEGORIA</td>
@@ -91,7 +93,7 @@ td {
 			for($i = 0; $i < count($consulta); $i++)
 			{
 				echo "<tr>";
-        echo '<td><a href="../view/cadastroQuantidade.html"><button>Lançar Quantidades</button></a></td>';
+        echo '<td><a href="cadastroQuantidade.php"><button>Lançar Quantidades</button></a></td>';
 				foreach ($consulta[$i] as $key => $value)
 				{
 				echo "<td>" . $value . "</td>";

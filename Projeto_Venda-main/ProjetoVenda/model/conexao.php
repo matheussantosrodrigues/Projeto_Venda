@@ -79,10 +79,21 @@ public function consultar(){
 public function consultarProduto(){
     
     $retornaProduto = array();
-    $lerProduto = $this-> pdo -> query("select valor, categoria, genero, tipo, marca from produto;");
+    $lerProduto = $this-> pdo -> query("select nomeProduto, quantidade, valor, categoria, genero, tipo, marca from produto;");
     $retornaProduto = $lerProduto -> fetchAll(PDO::FETCH_ASSOC);
     return $retornaProduto;
 }
+//função pra poder puxar os valores no cadastroQuantidade.html
+public function consultarProdQuant(){
+    
+    $retornaProdQuant = array();
+    $lerProdQuant = $this-> pdo -> query("select nomeProduto, codProduto from produto;");
+    $retornaProdQuant = $lerProdQuant -> fetchAll(PDO::FETCH_ASSOC);
+    
+    return $retornaProdQuant;
+    
+}
+
 
 }
 

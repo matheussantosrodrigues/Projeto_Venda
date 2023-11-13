@@ -55,6 +55,7 @@ nav .wrapper{
 }
 .nav-links .mobile-item{
   display: none;
+  
 }
 .nav-links .drop-menu{
   position: absolute;
@@ -200,11 +201,12 @@ nav .wrapper{
   }
   #showDrop:checked ~ .drop-menu,
   #showMega:checked ~ .mega-box{
-    padding: 30px;
+    padding: 100px;
     max-height: 100%;
   }
   .nav-links .desktop-item{
     display: none;
+    padding: 10rem;
   }
   .nav-links .mobile-item{
     display: block;
@@ -284,3 +286,4 @@ nav input{
   font-size: 20px;
   
 }
+

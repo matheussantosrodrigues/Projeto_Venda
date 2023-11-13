@@ -74,8 +74,5 @@ create table tamanho
 	codProduto int not null,
     constraint fkcodpro foreign key (codProduto) references produto (codProduto)
 	);        
-    select * from cliente;
-    select * from produto;
-	select * from tamanho;
-    select * from tamanhoProduto;
+    
  

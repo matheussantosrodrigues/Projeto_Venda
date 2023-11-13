@@ -1,27 +1,32 @@
+<?php
+require_once '../model/conexao.php';
+$pdo = new conexao ("projetovenda", "localhost", "root", "");
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-   
+	   
     <!-- LINKANDO O CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="button.css">
+    <link rel="stylesheet" href="../view/style.css" />
+    <link rel="stylesheet" type="text/css" href="../view/button.css">
+
       <style> 
         .fundo {
-  background-image: url(img/fundo2.png);
+  background-image: url(../view/img/fundo2.png);
   background-size: cover;
   background-repeat: no-repeat;
   }
   .centrar-formulario {
-    height: 100px;
-    width: 100%; /* Defina a largura desejada para o formulário */
-    margin: 0 auto; /* Isso alinhará automaticamente o formulário horizontalmente */
-    padding: 100px; /* Adicione algum espaço ao redor do formulário (opcional) */
-  }
   
-  /* aumentando o tamanho dos inputs */
-  .centrar-formulario input[type="number"],
+  width: 100%; /* Defina a largura desejada para o formulário */
+  margin: 0 auto; /* Isso alinhará automaticamente o formulário horizontalmente */
+  padding: 20px; /* Adicione algum espaço ao redor do formulário (opcional) */
+
+}
+    /* aumentando o tamanho dos inputs */
+    .centrar-formulario input[type="number"],
   .centrar-formulario input[type="text"] {
     width: 10%; /* largura da caixinha de texto */
     padding: 3px; /*altura da caixinha de texto*/
@@ -30,7 +35,7 @@
   }
   </style>
 
-	<title>C. Produto</title>
+	<title>C. Quantidade</title>
 </head>
 <body class="fundo">
 
@@ -67,8 +72,34 @@
     </ul>
   </div>
   </nav>
-  <br><br><br><br>
-		
+  <br><br><br><br><br><br>
+  <div class="formCad centrar-formulario">
+  
+		<form method="POST" action="../controller/cadastroQuantidade.php" >
+
+        <?php
+        // Chame a função para obter os dados
+        $retornaProdQuant = consultarProdQuant();
+        $consultaNome = $retornaProdQuant[0][nomeProduto];
+        $idProduto = $id[0][codProduto];
+        
+        
+
+
+        // Verifique se há dados para exibir
+        if (!empty($retornaProdQuant)) {
+            // Itere sobre o array para exibir os valores nos campos de entrada
+            foreach ($retornaProdQuant as $produto) {
+                echo '<label>Nome Produto: <input type="text" name="txt" readonly placeholder="Nome Produto:" value="' . $produto['$consultaNome'] . '"></label><br><br><br>';
+                echo '<label>Código Produto: <input type="text" name="txt" readonly placeholder="Cód Produto:" value="' . $produto['codProduto'] . '"></label><br><br><br>';
+            }
+        }
+        ?>
+            
+			<button class="button-64" role="button"><span class="text">Enviar</span></button>
+		</form>	
+	</div>
+
+
 </body>
 </html>
-

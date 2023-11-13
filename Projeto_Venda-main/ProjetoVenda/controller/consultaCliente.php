@@ -29,7 +29,7 @@ $pdo = new conexao ("projetovenda", "localhost", "root", "");
   width: 90%;
   text-align: center;
 }
-td {
+.td {
   width: 10%;
   background-color: #000;
 }
