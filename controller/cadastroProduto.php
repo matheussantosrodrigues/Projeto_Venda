@@ -15,5 +15,7 @@
     
     $conecta->insereProduto($cadNomeProduto, $cadValor, $cadCategoria, $cadGenero, $cadTipo,
         $cadMarca);
+
+        header("Location:consultaProduto.php");
     ?>
 

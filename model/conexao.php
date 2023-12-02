@@ -66,6 +66,15 @@ public function insereTamanho($cadTamanho){
     $insereTamanho->bindValue(":sigla", $cadTamanho);
     $insereTamanho->execute();
 }
+// CLIENTE
+public function consultarCliente(){
+    
+    $retornaCliente = array();
+    $lerCliente = $this-> pdo -> query("select nomeCliente, cpf, tipoLogradouro, Nresidencial, cep, UF, bairro, 
+    cidade, nomeRua, complemento, observacao from cliente;");
+    $retornaCliente = $lerCliente -> fetchAll(PDO::FETCH_ASSOC);
+    return $retornaCliente;
+}
 
 public function consultarTamanho(){
     
@@ -82,6 +91,34 @@ public function consultarProduto(){
     $retornaProduto = $lerProduto -> fetchAll(PDO::FETCH_ASSOC);
     return $retornaProduto;
 }
+
+//Função Insere Produto e Tamanho
+public function insereProdTam ($cadProd, $cadTam, $cadQtd){
+        
+    $insereProdTam = $this->pdo->prepare("insert into tamanhoProduto (codProduto, codTam, quantidade)   
+    values (:p, :t, :q)");
+
+    $insereProdTam->bindValue(":p", $cadProd);
+    $insereProdTam->bindValue(":t", $cadTam);
+    $insereProdTam->bindValue(":q", $cadQtd);
+
+    $insereProdTam->execute();
+}
+
+//Função para consultar o estoque
+public function consultarEstoque ()
+	{
+		$retorna = array();
+		$ler = $this->pdo->query("SELECT produto.codProduto, produto.nomeProduto, produto.categoria, produto.genero, produto.tipo, produto.marca, produto.valor, 
+        tamanho.sigla, tamanhoProduto.quantidade 
+ FROM produto 
+ INNER JOIN tamanhoProduto ON produto.codProduto = tamanhoProduto.codProduto 
+ INNER JOIN tamanho ON tamanho.codTam = tamanhoProduto.codTam 
+ ORDER BY produto.codProduto;");
+
+		$retorna = $ler-> fetchAll(PDO::FETCH_ASSOC);
+		return $retorna;
+	}
 
 }
 

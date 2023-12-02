@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
-
-	<?php
+<?php
+include 'consultaProduto.php';
 	require_once '../model/conexao.php';
 	$conecta = new conexao("projetovenda", "localhost", "root", "");
 
@@ -16,6 +8,3 @@
 
 	$conecta->insereTamanho($cadTamanho);
 	?>
-
-</body>
-</html>

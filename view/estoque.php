@@ -8,12 +8,34 @@ $pdo = new conexao ("projetovenda", "localhost", "root", "");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>C. Quantidades</title>
-	<link rel="stylesheet" href="../view/style.css" />
-	<style> 
+	
+  <!-- LINKANDO O CSS -->
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="button.css">
+      <style> 
+ label {
+  color: white;
+ }
+
         .fundo {
-   background-image: url(../view/img/fundo2.png);
-   background-size: cover;
-   background-repeat: no-repeat;
+  background-image: url(img/fundo2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  .centrar-formulario {
+    height: 100px;
+    width: 100%; /* Defina a largura desejada para o formulário */
+    margin: 0 auto; /* Isso alinhará automaticamente o formulário horizontalmente */
+    padding: 100px; /* Adicione algum espaço ao redor do formulário (opcional) */
+  }
+  
+  /* aumentando o tamanho dos inputs */
+  .centrar-formulario input[type="number"],
+  .centrar-formulario input[type="text"] {
+    width: 10%; /* largura da caixinha de texto */
+    padding: 3px; /*altura da caixinha de texto*/
+    margin-bottom: 2px; /* Adicione algum espaço entre os campos de entrada (opcional) */
+    font-size: 20px;
   }
   .centrar-formulario {
     width: 80%; /* Defina a largura desejada para o formulário */
@@ -86,7 +108,7 @@ td {
             </option>
             <?php } ?>
 
-        </select>
+        </select><br><br>
 
         <label>Selecione o tamanho</label>
         <select name="txtcodTam">
@@ -100,16 +122,39 @@ td {
             </option>
             <?php } ?>
 
-        </select>
+        </select><br><br>
         
         <label>Digite a quantidade em estoque</label>
-        <input type="number" name="txtQtd">
+        <input type="number" name="txtQtd"><br><br>
 
         <button class="button-64" role="button"><span class="text">Enviar</span></button>
 
-    </form>
-		
-	
+    </form><br><br>
+    
+    <table border="1">
+		<tr>
+			<td>CÓDIGO DO PRODUTO</td>
+			<td>NOME DO PRODUTO</td>
+			<td>CATEGORIA</td>
+			<td>GÊNERO</td>
+			<td>MODELO</td>
+			<td>MARCA</td>
+			<td>VALOR</td>
+      <td>TAMANHO</td>
+      <td>QUANTIDADE EM ESTOQUE</td>
+		</tr>
+
+    <?php
+      $consulta = $pdo->consultarEstoque();
+              if (count($consulta) > 0) {
+                for ($i=0; $i < count($consulta); $i++) { 
+                  echo"<tr>";
+                  foreach ($consulta[$i] as $key => $value){
+                    echo "<td>". $value."</td>";
+                  }
+                }
+              }
+    ?>
     
 </body>
 </html>

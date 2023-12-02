@@ -81,3 +81,9 @@ INNER JOIN cliente ON venda.codCliente  = cliente.codCliente
 INNER JOIN produto ON vendaItem.codProduto = produto.codProduto
 WHERE venda.codVenda = "20";
 
+SELECT produto.codProduto, produto.nomeProduto, produto.categoria, produto.genero, produto.tipo, produto.marca, produto.valor, 
+       tamanho.sigla, tamanhoProduto.quantidade 
+FROM produto 
+INNER JOIN tamanhoProduto ON produto.codProduto = tamanhoProduto.codProduto 
+INNER JOIN tamanho ON tamanho.codTam = tamanhoProduto.codTam 
+ORDER BY produto.codProduto;

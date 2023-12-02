@@ -88,7 +88,7 @@ td {
 	
 	<?php
    		//processando os resultados da consulta ao banco de dados e exibindo como uma tabela 
-		$consulta = $pdo->consultar();
+		$consulta = $pdo->consultarCliente();
 
 		if(count($consulta) > 0)
 		{

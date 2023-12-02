@@ -9,7 +9,7 @@ $pdo = new conexao ("projetovenda", "localhost", "root", "");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>C. Produto</title>
 	<link rel="stylesheet" href="../view/style.css" />
-  <link rel="stylesheet" type="text/css" href="button.css">
+  <link rel="stylesheet" type="text/css" href="../view/button.css">
 	<style> 
         .fundo {
    background-image: url(../view/img/fundo2.png);
@@ -104,9 +104,10 @@ td {
 	?>
     
     </table>
-    <button class="button-64" role="button"><span class="text">
-      <a href="cadastroQuantidade.php">Cadastre as quantidades!</a>
-    </span></button>
+    <br><br>
+    
+    <a href="../view/estoque.php"><button class="button-64" role="button"><span class="text">Lançar Quantidades</span></button></a>
+    
     
 </body>
 </html>

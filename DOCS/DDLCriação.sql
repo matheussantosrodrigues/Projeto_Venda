@@ -62,7 +62,7 @@ create table produto
     
 create table tamanho
 	(
-		sigla varchar(3) not null,
+		sigla varchar(3) unique not null,
         codTam int auto_increment not null primary key
         );
         

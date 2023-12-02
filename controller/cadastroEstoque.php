@@ -3,12 +3,12 @@ require_once '../model/conexao.php';
 $conexao = new conexao ("ProjetoVenda", "localhost", "root", "");
 
 
-$codProd = addslashes($_POST['txtcodprod']);
-$codTam = addslashes($_POST['txtcodTam']);
-$codQtd = addslashes($_POST['txtQtd']);
+$cadProd = addslashes($_POST['txtcodprod']);
+$cadTam = addslashes($_POST['txtcodTam']);
+$cadQtd = addslashes($_POST['txtQtd']);
 
-$conexao -> insertProdTam ($codProd, $codTam, $cadQtd);
+$conexao -> insereProdTam ($cadProd, $cadTam, $cadQtd);
 echo "Quantidades lançadas";
 
-header("Location: ../view/estoque. php");
+header("Location:../view/estoque.php");
 ?>
